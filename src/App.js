@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import { Outlet } from "react-router-dom";
+import { Container } from "@mui/material";
+import NavBar from "./components/Pages/NavBar/NavBar";
+import Footer from "./components/Pages/Footer/Footer";
+import { ColorModeContext } from "./ThemeContext";
 
 function App() {
+  const colorMode = useContext(ColorModeContext);
+  console.log("Rendering App with mode:", colorMode.mode);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <div className="App">
+        <NavBar maxWidth="lg" />
+        <Container
+          sx={{
+            minHeight: "100vh",
+            backgroundColor: (theme) => theme.palette.background.default,
+            color: (theme) => theme.palette.text.primary, // Ensure text also updates
+            mt: "4rem",
+            flexGrow: 1,
+            p: 3,
+          }}
+          maxWidth="lg"
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Outlet />
+        </Container>
+        <Footer maxWidth="lg" />
+      </div>
+    </>
   );
 }
 
