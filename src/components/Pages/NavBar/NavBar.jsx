@@ -112,7 +112,7 @@ const NavBar = () => {
           <Toolbar>
             {/* Menu Button for Mobile */}
             <IconButton
-              color="secondary"
+              color="white"
               edge="start"
               onClick={handleDrawerToggle}
               aria-label="Open navigation menu"
@@ -124,7 +124,7 @@ const NavBar = () => {
             {/* Desktop Title with Icon */}
             <Typography
               variant="h6"
-              color="secondary"
+              color="#fff"
               display="flex"
               alignItems="center"
               ml={1}
@@ -137,7 +137,7 @@ const NavBar = () => {
             {/* Mobile Page Name */}
             <Typography
               variant="h6"
-              color="secondary"
+              color="#000"
               display="flex"
               alignItems="center"
               ml={1}
@@ -153,7 +153,7 @@ const NavBar = () => {
                   component={NavLink}
                   to={item.link}
                   key={item.label}
-                  sx={{ padding: "10px 15px" }}
+                  sx={{ padding: "10px 15px", margin: "2px" }}
                 >
                   {item.label}
                 </StyledNavButton>

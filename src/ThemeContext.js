@@ -19,63 +19,78 @@ export function ThemeProviderWrapper({ children }) {
           ...(mode === "light"
             ? {
                 background: {
-                  default: "#ffffff", // White
-                  paper: "#f5f5f5", // Light gray
+                  default: "#FAFAFA",
+                  paper: "#FFFFFF",
                 },
                 text: {
-                  primary: "#000000", // Black text for readability
-                  secondary: "#333333", // Dark gray for subtitles
+                  primary: "#212121",
+                  secondary: "#757575",
+                },
+                primary: {
+                  main: "#1976D2",
                 },
                 button: {
-                  main: "#1976d2", // Blue buttons
-                  contrastText: "#ffffff", // White text on buttons
+                  main: "#1976D2",
+                  contrastText: "#FFFFFF",
                 },
               }
             : {
                 background: {
-                  default: "#0d0d0d", // Dark gray (better contrast)
-                  paper: "#1a1a1a", // Slightly lighter dark gray for cards
+                  default: "#121212", // Deep charcoal
+                  paper: "#1E1E1E", // Dark gray
                 },
                 text: {
-                  primary: "#ffffff", // Pure white for readability
-                  secondary: "#b3b3b3", // Light gray for subtitles
+                  primary: "#E0E0E0", // Light gray
+                  secondary: "#B3B3B3", // Muted gray
+                },
+                primary: {
+                  main: "#00A6FB", // Cyan
+                },
+                secondary: {
+                  main: "#FF4081", // Muted pink
                 },
                 button: {
-                  main: "#ff9800", // Bright orange buttons for visibility
-                  contrastText: "#000000", // Dark text on buttons
+                  main: "#00A6FB", // Cyan button
+                  contrastText: "#000000",
                 },
               }),
         },
         typography: {
+          fontFamily: "Poppins, Arial, sans-serif",
           h1: {
             fontSize: "2.5rem",
             fontWeight: "bold",
-            color: mode === "light" ? "#000000" : "#ffeb3b", // Black in light mode, yellow in dark mode
+            color: mode === "light" ? "#212121" : "#00A6FB",
           },
           h2: {
             fontSize: "2rem",
             fontWeight: "bold",
-            color: mode === "light" ? "#000000" : "#ffeb3b", // Similar to h1
+            color: mode === "light" ? "#212121" : "#FF4081",
           },
         },
         components: {
           MuiButton: {
             styleOverrides: {
               root: {
-                backgroundColor: mode === "light" ? "#1976d2" : "#ff9800",
-                color: mode === "light" ? "#ffffff" : "#000000",
+                backgroundColor: mode === "light" ? "#1976D2" : "#00A6FB",
+                color: mode === "light" ? "#FFFFFF" : "#000000",
+                borderRadius: "8px",
+                textTransform: "none",
                 "&:hover": {
-                  backgroundColor: mode === "light" ? "#1565c0" : "#e68900",
+                  backgroundColor: mode === "light" ? "#1565C0" : "#008CDB",
                 },
               },
             },
           },
-          MuiAccordionSummary: {
+          MuiCard: {
             styleOverrides: {
               root: {
-                backgroundColor: mode === "light" ? "#f0f0f0" : "#333333",
-                color: mode === "light" ? "#000000" : "#333", // High contrast text
-                fontWeight: "bold",
+                backgroundColor: mode === "light" ? "#FFFFFF" : "#1E1E1E",
+                borderRadius: "12px",
+                boxShadow:
+                  mode === "light"
+                    ? "0px 4px 10px rgba(0,0,0,0.1)"
+                    : "0px 4px 10px rgba(255,255,255,0.1)",
               },
             },
           },

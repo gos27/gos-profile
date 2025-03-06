@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Box,
   Typography,
@@ -20,12 +21,12 @@ const About = () => {
     {
       name: "Dolapo Alli",
       role: "CEO & Founder",
-      image: "/images/dolapo.jpeg", 
+      image: "/images/dolapo.jpeg",
     },
     {
       name: "Bolade Ayodeji",
       role: "Lead Developer",
-      image: "/images/bolade.jpg", 
+      image: "/images/bolade.jpg",
     },
   ];
 
@@ -43,7 +44,7 @@ const About = () => {
         sx={{
           textAlign: "center",
           py: 6,
-          backgroundColor: "primary.main",
+          backgroundColor: "primary.light",
           color: "#fff",
           borderRadius: 2,
         }}
@@ -84,6 +85,7 @@ const About = () => {
                   mx: "auto",
                   boxShadow: 3,
                   borderRadius: 2,
+                  padding: 3,
                 }}
               >
                 <CardMedia
@@ -116,21 +118,26 @@ const About = () => {
           my: 6,
           textAlign: "center",
           py: 4,
-          backgroundColor: "secondary.light",
+          backgroundColor: "primary.light",
           borderRadius: 2,
         }}
       >
-        <Typography variant="h4" fontWeight="bold">
+        <Typography variant="h4" fontWeight="bold" sx={{ color: "#fff" }}>
           Join Us on Our Journey
         </Typography>
-        <Typography variant="body1" sx={{ mt: 2 }}>
+        <Typography variant="body1" sx={{ mt: 2, color: "#fff" }}>
           Want to work with us? Let's build something amazing together.
         </Typography>
         <Button
           variant="contained"
-          color="primary"
-          sx={{ mt: 3 }}
-          href="/contact"
+          sx={{
+            mt: 3,
+            bgcolor: "primary",
+            color: "#fff",
+            "&:hover": { bgcolor: "#f0f0f0" },
+          }}
+          component={Link}
+          to="/contact"
         >
           Contact Us
         </Button>

@@ -1,12 +1,16 @@
 import { Snackbar, Alert } from "@mui/material";
 import React, { useState } from "react";
-import { Button, Box, Container, Paper } from "@mui/material";
+import { Button, Box, Container, IconButton, Paper } from "@mui/material";
 import { Formik, Form } from "formik";
 import { SignUpSchema } from "../schemas/Index";
 import FormikControl from "../Formik/FormikControl";
+import { Brightness4 } from "@mui/icons-material";
+import { useColorMode } from "../../../ThemeContext";
 
 const Contact = () => {
   const [open, setOpen] = useState(false);
+
+  const { toggleColorMode } = useColorMode();
 
   const initialSignupValues = {
     username: "",
@@ -44,6 +48,12 @@ const Contact = () => {
 
   return (
     <Container maxWidth="sm">
+      {/* Dark Mode Toggle Button */}
+      <Box sx={{ display: "flex", justifyContent: "flex-end", py: 2 }}>
+        <IconButton onClick={toggleColorMode} color="inherit">
+          <Brightness4 />
+        </IconButton>
+      </Box>
       <Paper elevation={3} sx={{ padding: 4, marginTop: 5 }}>
         {" "}
         <Formik

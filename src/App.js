@@ -17,7 +17,7 @@ function App() {
           sx={{
             minHeight: "100vh",
             backgroundColor: (theme) => theme.palette.background.default,
-            color: (theme) => theme.palette.text.primary, // Ensure text also updates
+            color: (theme) => theme.palette.text.primary,
             mt: "4rem",
             flexGrow: 1,
             p: 3,

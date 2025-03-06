@@ -69,7 +69,7 @@ const Home = () => {
           </Typography>
           <Button
             variant="contained"
-            color="secondary"
+            color="#fff"
             size="large"
             component={Link}
             to="/about"
@@ -84,7 +84,9 @@ const Home = () => {
         <Typography variant="h3" sx={{ textAlign: "center", mb: 4 }}>
           Our Key Features
         </Typography>
-        <Grid container spacing={4}>
+        <Grid container spacing={6}>
+          {" "}
+          {/* Increased spacing for better separation */}
           {[
             {
               title: "🚀 Fast & Responsive",
@@ -108,9 +110,10 @@ const Home = () => {
             },
           ].map((feature, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
+              {/* 4 columns on desktop */}
               <Box
                 sx={{
-                  height: "100%",
+                  minHeight: "250px", // Ensure all boxes have a minimum height
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "center",
